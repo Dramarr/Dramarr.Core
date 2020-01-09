@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Authors>Emiliano Montesdeoca</Authors>
+    <Company>Emiliano Montesdeoca</Company>
+    <RepositoryUrl>https://github.com/Dramarr/Dramarr.Core</RepositoryUrl>
+  </PropertyGroup>
+
+</Project>
