@@ -1,10 +1,14 @@
-language: csharp
-addons:
-    apt:
-        sources:
-            - mono
-            - mono-libtiff-compat
-        packages:
-            - mono-complete
-            - nuget
-solution: Dramarr.Core.sln
+language:
+    csharp
+mono: latest 
+dotnet: 3.0
+
+os:
+  - linux
+
+before_script:
+    - dotnet restore ./Dramarr.Core.csproj
+    
+  
+script:
+    - dotnet build ./Dramarr.Core.csproj
