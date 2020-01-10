@@ -6,7 +6,7 @@
     <Authors>Emiliano Montesdeoca</Authors>
     <Description>Core library for Dramarr</Description>
     <RepositoryUrl>https://github.com/Dramarr/Dramarr.Core</RepositoryUrl>
-    <PackageLicenseFile>README.md</PackageLicenseFile>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <AssemblyVersion>1.0.0.2</AssemblyVersion>
     <FileVersion>1.0.0.2</FileVersion>
     <Version>1.0.0.2</Version>
@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="README.md">
+    <None Include="LICENSE">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
