@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Emiliano Montesdeoca</Authors>
+    <Description>Core library for Dramarr</Description>
+    <RepositoryUrl>https://github.com/Dramarr/Dramarr.Core</RepositoryUrl>
+    <PackageLicenseFile>license.txt</PackageLicenseFile>
+    <AssemblyVersion>1.0.0.2</AssemblyVersion>
+    <FileVersion>1.0.0.2</FileVersion>
+    <Version>1.0.0.2</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="license.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+</Project>
