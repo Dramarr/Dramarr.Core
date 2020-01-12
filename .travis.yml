@@ -14,7 +14,9 @@ global:
 
 before_script:
     - dotnet restore ./Dramarr.Core/Dramarr.Core.csproj
+    - dotnet restore ./Dramarr.Core.Tests/Dramarr.Core.Tests.csproj
     
   
 script:
-    - dotnet build ./Dramarr.Core/Dramarr.Core.csproj
+    - dotnet build ./Dramarr.Core/Dramarr.Core.csproj --configuration Release
+    - dotnet test ./Dramarr.Core.Tests/Dramarr.Core.Tests.csproj --configuration Release
