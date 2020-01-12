@@ -2,8 +2,11 @@
 
 namespace Dramarr.Core.Enums
 {
-    public class EnumsHelpers
+    public class EpisodeHelpers
     {
+        /// <summary>
+        /// Episode status enum
+        /// </summary>
         public enum EpisodeStatus
         {
             UNKNOWN,

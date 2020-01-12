@@ -54,6 +54,12 @@ namespace Dramarr.Core.Settings
 
         #region Public methods
 
+        /// <summary>
+        /// Gets settings
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="defaultValue"></param>
+        /// <returns></returns>
         public string GetSetting(string key, string defaultValue = null)
         {
             try

@@ -6,6 +6,13 @@ namespace Dramarr.Core.Download
 {
     public class DownloadHelpers
     {
+        /// <summary>
+        /// Downloads a file
+        /// </summary>
+        /// <param name="url"></param>
+        /// <param name="path"></param>
+        /// <param name="filename"></param>
+        /// <returns></returns>
         public static bool DownloadFile(string url, string path, string filename)
         {
             try
