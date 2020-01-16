@@ -12,7 +12,7 @@ global:
 - DOTNET_CLI_TELEMETRY_OPTOUT=true
    
     
- jobs:
+jobs:
   include:
     - stage: restore
       script: .scripts/restore.sh
@@ -21,7 +21,7 @@ global:
       script: .scripts/build.sh
 
     - stage: test
-          script: .scripts/test.sh
+      script: .scripts/test.sh
 
     - stage: push-package
       if: branch = master AND type = push
