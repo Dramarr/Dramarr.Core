@@ -10,13 +10,25 @@ os:
 global:
 - DOTNET_SKIP_FIRST_TIME_EXPERIENCE=true
 - DOTNET_CLI_TELEMETRY_OPTOUT=true
-
-
-before_script:
-    - dotnet restore ./Dramarr.Core/Dramarr.Core.csproj
-    - dotnet restore ./Dramarr.Core.Tests/Dramarr.Core.Tests.csproj
+   
     
-  
-script:
-    - dotnet build ./Dramarr.Core/Dramarr.Core.csproj --configuration Release
-    - dotnet test ./Dramarr.Core.Tests/Dramarr.Core.Tests.csproj --configuration Release
+ jobs:
+  include:
+    - stage: restore
+      script: 
+        - dotnet restore ./Dramarr.Core/Dramarr.Core.csproj
+        - dotnet restore ./Dramarr.Core.Tests/Dramarr.Core.Tests.csproj
+
+    - stage: build
+      script:
+        - dotnet build ./Dramarr.Core/Dramarr.Core.csproj --configuration Release
+
+    - stage: test
+          script:
+            - dotnet test ./Dramarr.Core/Dramarr.Core.csproj --configuration Release
+
+    - stage: push-package
+      if: branch = master AND type = push
+      script:
+        - dotnet nuget push ./Dramarr.Core/bin/Release/*.nupkg -s "https://nuget.org"
+        - dotnet nuget push ./Dramarr.Core/bin/Release/*.nupkg -s "https://nuget.pkg.github.com/Dramarr/index.json"
