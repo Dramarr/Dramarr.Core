@@ -10,13 +10,19 @@ os:
 global:
 - DOTNET_SKIP_FIRST_TIME_EXPERIENCE=true
 - DOTNET_CLI_TELEMETRY_OPTOUT=true
+   
+jobs:
+  include:
+    - stage: restore
+      script: bash scripts/restore.sh
 
+    - stage: build
+      script: bash scripts/build.sh
 
-before_script:
-    - dotnet restore ./Dramarr.Core/Dramarr.Core.csproj
-    - dotnet restore ./Dramarr.Core.Tests/Dramarr.Core.Tests.csproj
-    
-  
-script:
-    - dotnet build ./Dramarr.Core/Dramarr.Core.csproj --configuration Release
-    - dotnet test ./Dramarr.Core.Tests/Dramarr.Core.Tests.csproj --configuration Release
+    - stage: test
+      script: bash scripts/test.sh
+
+    - stage: push-package
+      if: branch = master AND type = push
+      script: bash scripts/push.sh
+        

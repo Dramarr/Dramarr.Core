@@ -1,0 +1,1 @@
+dotnet build ./Dramarr.Core/Dramarr.Core.csproj --configuration Release
