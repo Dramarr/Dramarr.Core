@@ -1,2 +1,2 @@
-dotnet nuget push ./Dramarr.Core/bin/Release/*.nupkg -s "https://nuget.org" -k $NUGET_API_KEY
-dotnet nuget push ./Dramarr.Core/bin/Release/*.nupkg -s "https://nuget.pkg.github.com/Dramarr/index.json" -k $GITHUB_API_KEY
+dotnet nuget push ./bin/Release/*.nupkg -k $NUGET_API_KEY -s "https://nuget.org" 
+dotnet nuget push ./bin/Release/*.nupkg -k $GITHUB_API_KEY -s "https://nuget.pkg.github.com/Dramarr/index.json" 
